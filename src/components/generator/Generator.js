@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { findDOMNode } from "react-dom";
 import domtoimage from 'dom-to-image';
 
-import html2canvas from "html2canvas";
+// import html2canvas from "html2canvas";
 import {
   Button,
   AppBar,
