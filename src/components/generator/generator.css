@@ -2,7 +2,8 @@
   justify-content: space-between;
 }
 
-.css-vqmohf-MuiButtonBase-root-MuiRadio-root, .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
+.MuiRadio-root,
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
   color: #fff !important;
   padding: 2px !important;
 }
@@ -67,8 +68,8 @@
 
 .aligned-book-name {
   font-size: 58px;
-  top: 7%;
-  font-family: 'Yiddishkeit';
+  top: 6.5%;
+  font-family: "Yiddishkeit";
   text-shadow: 1px 1px 4px #393939;
   text-align: center;
   letter-spacing: 3px;
@@ -76,14 +77,14 @@
 
 .curved-book-name {
   font-size: 40px;
-  top: -2%;
+  top: -1%;
 }
 
 .curved-book-name p {
   color: rgb(255, 255, 255);
-  font-family: 'Yiddishkeit';
+  font-family: "Yiddishkeit";
   font-weight: 900;
-  font-size: 60px;
+  font-size: 58px;
   text-shadow: 1px 1px 4px #393939;
   left: 50%;
 }
@@ -106,4 +107,48 @@
   transform: translateX(-50%);
   bottom: 60px;
   cursor: grab;
+}
+
+@media (max-width: 440px) {
+  .aligned-book-name {
+    font-size: 50px;
+  }
+
+  .curved-book-name {
+    top: -1%;
+  }
+
+  .curved-book-name p {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .aligned-book-name {
+    font-size: 45px;
+    top: 6%;
+  }
+
+  .curved-book-name {
+    top: -1.5%;
+  }
+
+  .curved-book-name p {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 330px) {
+  .aligned-book-name {
+    font-size: 40px;
+    top: 5.7%;
+  }
+
+  .curved-book-name {
+    top: -2%;
+  }
+
+  .curved-book-name p {
+    font-size: 40px;
+  }
 }

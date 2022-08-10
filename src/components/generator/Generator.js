@@ -201,9 +201,6 @@ function Generator(props) {
             </Grid>
             <Grid item xs={6} sm={3} md={1.5}>
               <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="female"
-                name="radio-buttons-group"
                 value={bookNameStyle}
                 onChange={(e) => setBookNameStyle(e.target.value)}
               >
