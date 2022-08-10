@@ -43,7 +43,6 @@ const NIKUD = [
 const filtereCharsWithNikud = (txt) => {
   const filtered = [];
   for (const char of txt) {
-    console.log(12);
     if (!NIKUD.includes(char)) {
       filtered.push(char);
     } else {
@@ -179,7 +178,6 @@ function Generator(props) {
       a.href = canvas.toDataURL("image/png");
       a.click();
       document.getElementById("viewportMeta").setAttribute("content", vp);
-
     });
   };
 
