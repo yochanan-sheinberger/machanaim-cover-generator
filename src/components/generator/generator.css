@@ -30,7 +30,7 @@
 }
 
 .cover-wrapper {
-  width: 450px;
+  width: min(450px, 98%);
   position: absolute;
   left: 0;
   right: 0;
@@ -62,6 +62,7 @@
   display: inline-block;
   position: absolute;
   pointer-events: none;
+  touch-action: none;
 }
 
 .aligned-book-name {
@@ -91,6 +92,7 @@
   width: 100%;
   z-index: 10;
   pointer-events: none;
+  touch-action: none;
   position: relative;
 }
 
