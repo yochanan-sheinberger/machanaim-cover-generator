@@ -164,20 +164,23 @@ function Generator(props) {
       touchLocation = e.targetTouches[0];
     }
     if (mouseDown) {
-      e.target.style.left = (e.clientX || touchLocation.clientX ) + imgOffset.offsetLeft  + "px";
-      e.target.style.top = (e.clientY || touchLocation.clientY) + imgOffset.offsetTop + "px";
+      e.target.style.left =
+        (e.clientX || touchLocation.clientX) + imgOffset.offsetLeft + "px";
+      e.target.style.top =
+        (e.clientY || touchLocation.clientY) + imgOffset.offsetTop + "px";
     }
   };
 
   const download = () => {
-    const vp = document.getElementById("viewportMeta").getAttribute("content");
-    document.getElementById("viewportMeta").setAttribute("content", "width=800");
-    html2canvas(coverRef.current).then((canvas) => {
+    html2canvas(coverRef.current, {
+      imageTimeout: 15000,
+      scale: 3,
+      useCORS: true,
+    }).then((canvas) => {
       let a = document.createElement("a");
-      a.download = filtereCharsWithNikud(bookName).join('') + ".png";
+      a.download = filtereCharsWithNikud(bookName).join("") + ".png";
       a.href = canvas.toDataURL("image/png");
       a.click();
-      document.getElementById("viewportMeta").setAttribute("content", vp);
     });
   };
 
