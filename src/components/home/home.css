@@ -1,0 +1,106 @@
+.home {
+  margin: auto;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  max-width: 0px;
+  margin: auto;
+  animation: display-logo 0.1s 5s forwards;
+}
+
+.kids {
+  height: 70px;
+  position: relative;
+}
+
+.kid {
+  position: absolute;
+}
+
+.kid-right {
+  max-width: 27px;
+  right: -80px;
+  bottom: 2px;
+  animation: kid-right-walk 4s 0.5s forwards ease-in-out;
+}
+
+.kid-left {
+  max-width: 29px;
+  left: -80px;
+  bottom: 0px;
+  animation: kid-left-walk 4s 0.5s forwards ease-in-out;
+}
+
+.home h2 {
+  text-align: center;
+  font-family: 'Yiddishkeit';
+  text-shadow: 1px 1px 4px #393939;
+  letter-spacing: 2px;
+}
+
+.home h3 {
+  font-family: 'Varela Round';
+  text-align: center;
+  margin-top: 50px;
+}
+
+.inst-list .MuiTypography-root {
+  font-family: 'Varela Round';
+  text-align: right;
+}
+
+.inst-list .MuiListItemButton-root:hover {
+  background-color: unset;
+}
+
+.inst-list svg {
+  fill: #45a31c;
+}
+
+.home label {
+  margin: auto;
+  min-width: unset;
+  font-size: 20px !important;
+  justify-content: center !important;
+}
+
+.home label span{
+  font-size: 17px !important;
+  font-family: 'Varela Round', sans-serif;
+}
+
+@keyframes kid-right-walk {
+  0% {
+    right: 0%;
+  }
+  99.9% {
+    right: calc(50% - 26px);
+  }
+  100% {
+    right: calc(50% - 26px);
+  }
+}
+
+@keyframes kid-left-walk {
+  0% {
+    left: 0%;
+  }
+  99.9% {
+    left: calc(50% - 25px);
+  }
+  100% {
+    left: calc(50% - 25px);
+  }
+}
+
+@keyframes display-logo {
+  0% {
+    max-width: 50px;
+  }
+  100% {
+    max-width: 50px;
+  }
+}
