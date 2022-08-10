@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/heading-has-content */
 import React, { useState, useEffect, useRef } from "react";
 import { findDOMNode } from "react-dom";
@@ -16,7 +17,6 @@ import {
   Grid,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import PhotoSizeSelectLargeIcon from "@mui/icons-material/PhotoSizeSelectLarge";
 
 import cover from "../../assets/machanaim-cover.png";
 import "./generator.css";
@@ -84,7 +84,7 @@ const adjustOriginForChars = (origin, char) => {
 };
 
 function Generator(props) {
-  const [file, setFile] = useState(props.file);
+  const [file] = useState(props.file);
   const [preview, setPreview] = useState("");
   const [sliderValue, setSliderValue] = useState(100);
   const [mouseDown, setMouseDown] = useState(false);
