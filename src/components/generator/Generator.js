@@ -142,11 +142,15 @@ function Generator(props) {
   };
 
   const handleMouseDown = (e) => {
+    let touchLocation;
+    if (e.targetTouches) {
+      touchLocation = e.targetTouches[0];
+    }
     e.target.style.cursor = "grabbing";
     setMouseDown(true);
     imgOffset = {
-      offsetLeft: e.target.offsetLeft - e.clientX,
-      offsetTop: e.target.offsetTop - e.clientY,
+      offsetLeft: e.target.offsetLeft - (e.clientX || touchLocation.clientX),
+      offsetTop: e.target.offsetTop - (e.clientY || touchLocation.clientY),
     };
   };
 
@@ -156,16 +160,20 @@ function Generator(props) {
   };
 
   const dragImg = (e) => {
+    let touchLocation;
+    if (e.targetTouches) {
+      touchLocation = e.targetTouches[0];
+    }
     if (mouseDown) {
-      e.target.style.left = e.clientX + imgOffset.offsetLeft + "px";
-      e.target.style.top = e.clientY + imgOffset.offsetTop + "px";
+      e.target.style.left = (e.clientX || touchLocation.clientX ) + imgOffset.offsetLeft  + "px";
+      e.target.style.top = (e.clientY || touchLocation.clientY) + imgOffset.offsetTop + "px";
     }
   };
 
   const download = () => {
     html2canvas(coverRef.current).then((canvas) => {
       let a = document.createElement("a");
-      a.download = "ss.png";
+      a.download = filtereCharsWithNikud(bookName).join('') + ".png";
       a.href = canvas.toDataURL("image/png");
       a.click();
     });
