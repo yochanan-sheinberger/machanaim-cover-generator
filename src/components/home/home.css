@@ -34,21 +34,24 @@
   animation: kid-left-walk 4s 0.5s forwards ease-in-out;
 }
 
+.home * {
+  font-family: 'Varela Round' !important;
+}
+
 .home h2 {
   text-align: center;
-  font-family: 'Yiddishkeit';
+  font-family: 'Yiddishkeit' !important;
   text-shadow: 1px 1px 4px #393939;
   letter-spacing: 2px;
 }
 
+
 .home h3 {
-  font-family: 'Varela Round';
   text-align: center;
   margin-top: 50px;
 }
 
 .inst-list .MuiTypography-root {
-  font-family: 'Varela Round';
   text-align: right;
 }
 

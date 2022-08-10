@@ -28,6 +28,8 @@ const instructions = [
   "התאימו את סגנון הכותרת ושפרו אותה באמצעות הסליידרים",
   "לחצו על הורדה ושתפו את החברים",
 ];
+const fileTypes = ["JPG", "JPEG", "PNG", "GIF"];
+
 
 function Home() {
   const [file, setFile] = useState(null);
@@ -75,6 +77,8 @@ function Home() {
         <Box maxWidth={"520px"} margin="auto">
           <Typography variant="h3">הוראות שימוש:</Typography>
           <List className="inst-list">{instructionsList}</List>
+          <Typography textAlign="center" variant="subtitle2">להערות הארות והצעות <a href="nailto:yochkesh@gmail.com">צרו קשר</a></Typography>
+
         </Box>
 
         <Box marginTop={5}>
@@ -82,6 +86,7 @@ function Home() {
             handleChange={handleChange}
             name="file"
             label="העלה או גרור תמונה לכאן"
+            types={fileTypes}
           />
         </Box>
       </Box>
