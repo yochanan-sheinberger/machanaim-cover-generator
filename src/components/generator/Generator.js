@@ -2,8 +2,9 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import React, { useState, useEffect, useRef } from "react";
 import { findDOMNode } from "react-dom";
+import domtoimage from 'dom-to-image';
 
-import html2canvas from "html2canvas";
+// import html2canvas from "html2canvas";
 import {
   Button,
   AppBar,
@@ -172,11 +173,28 @@ function Generator(props) {
   };
 
   const download = () => {
-    html2canvas(coverRef.current).then((canvas) => {
+    // html2canvas(coverRef.current, {
+    //   imageTimeout: 15000,
+    //   scale: 3,
+    //   useCORS: true,
+    // }).then((canvas) => {
+    //   let a = document.createElement("a");
+    //   a.download = filtereCharsWithNikud(bookName).join("") + ".png";
+    //   a.href = canvas.toDataURL("image/png");
+    //   a.click();
+    // });
+    coverRef.current.style.marginLeft = 0;
+    domtoimage.toPng(coverRef.current, { bgcolor: '#fff'})
+    .then((dataUrl) => {
       let a = document.createElement("a");
       a.download = filtereCharsWithNikud(bookName).join("") + ".png";
-      a.href = canvas.toDataURL("image/png");
+      a.href = dataUrl;
       a.click();
+      coverRef.current.style.marginLeft = 'auto';
+
+    })
+    .catch((error) => {
+        console.error('oops, something went wrong!', error);
     });
   };
 

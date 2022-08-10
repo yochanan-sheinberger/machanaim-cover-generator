@@ -48,7 +48,7 @@ function Home() {
   };
 
   const instructionsList = instructions.map((ins) => (
-    <ListItem disablePadding>
+    <ListItem key={ins.substring(0, 10)} disablePadding>
       <ListItemButton disableRipple>
         <ListItemIcon>
           <HdrWeakIcon />
