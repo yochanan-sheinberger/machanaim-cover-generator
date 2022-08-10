@@ -77,7 +77,7 @@ function Home() {
         <Box maxWidth={"520px"} margin="auto">
           <Typography variant="h3">הוראות שימוש:</Typography>
           <List className="inst-list">{instructionsList}</List>
-          <Typography textAlign="center" variant="subtitle2">להערות הארות והצעות <a href="nailto:yochkesh@gmail.com">צרו קשר</a></Typography>
+          <Typography textAlign="center" variant="subtitle2">להערות הארות והצעות <a href="mailto:yochkesh@gmail.com">צרו קשר</a></Typography>
 
         </Box>
 
