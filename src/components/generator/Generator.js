@@ -171,11 +171,15 @@ function Generator(props) {
   };
 
   const download = () => {
+    const vp = document.getElementById("viewportMeta").getAttribute("content");
+    document.getElementById("viewportMeta").setAttribute("content", "width=800");
     html2canvas(coverRef.current).then((canvas) => {
       let a = document.createElement("a");
       a.download = filtereCharsWithNikud(bookName).join('') + ".png";
       a.href = canvas.toDataURL("image/png");
       a.click();
+      document.getElementById("viewportMeta").setAttribute("content", vp);
+
     });
   };
 
